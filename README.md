@@ -33,4 +33,4 @@ Rooms are held in memory. Use one server instance; restart clears active rooms. 
 
 ## Current MVP
 
-Host creates a room, two players join by QR or code, calibrate motion or use touch controls, and play Pong to 7 with rematches. Temporary player disconnect pauses the game for a 30-second grace period. Sound, server-side shared state, and keyboard simulation are follow-up work.
+Host chooses Motion Pong or Neon Maze, creates a room, and two players join by QR or code. Phones calibrate motion or use touch controls. Pong plays to 7; in Maze, both players race through the same generated course to the exit. Rematches generate a fresh maze. Temporary player disconnect pauses the game for a 30-second grace period. Match history, server-side shared state, and keyboard simulation are follow-up work.
