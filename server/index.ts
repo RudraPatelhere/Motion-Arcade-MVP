@@ -6,6 +6,7 @@ import path from 'node:path';
 import {existsSync} from 'node:fs';
 
 const app=express(); const http=createServer(app); const allowedOrigin=process.env.CLIENT_ORIGIN; const io=new Server(http,{cors:{origin:allowedOrigin||true}});
+app.get('/health',(_,res)=>res.json({ok:true}));
 type Player={id:string;token:string;socket:string|null;name:string;slot:0|1;ready:boolean;input:number;lastSeen:number};
 type Game={ball:{x:number;y:number;vx:number;vy:number};paddles:[number,number];score:[number,number];countdown:number;winner:number|null};
 type Room={code:string;host:string;players:Player[];status:'lobby'|'countdown'|'playing'|'over'|'paused';game:Game;updated:number;pauseAt:number};
